@@ -1,0 +1,30 @@
+// ==UserScript==
+// @name         Paramount Debug
+// @namespace    http://tampermonkey.net/
+// @version      1
+// @description  try to take over the world!
+// @author       yonghuax
+// @match        https://paragon-na-preprod.amazon.com/hz/view-case?caseId=*
+// @match        https://paragon-eu-preprod.amazon.com/hz/view-case?caseId=*
+// @match        https://paragon-fe-preprod.amazon.com/hz/view-case?caseId=*
+// @match        https://paragon-cn-preprod.amazon.com/hz/view-case?caseId=*
+// @match        https://paragon-na.amazon.com/hz/view-case?caseId=*
+// @match        https://paragon-eu.amazon.com/hz/view-case?caseId=*
+// @match        https://paragon-fe.amazon.com/hz/view-case?caseId=*
+// @match        https://paragon-cn.amazon.com/hz/view-case?caseId=*
+// @grant        none
+// ==/UserScript==
+
+var button = document.createElement("button");
+button.innerHTML = "Debug Mode";
+button.style.position = "absolute";
+button.style.left = "50%";
+button.style.top = "9%";
+button.style.background = "rgb(255, 127, 80)";
+button.style.color = "white";
+button.style.border = "none";
+button.addEventListener ("click", function paramountDebug() {
+    window.open(window.location.href + "&paramountDebug=1")
+});
+
+document.body.appendChild(button);
